@@ -30,10 +30,12 @@ function SmoothOperator( source, opts ){
 
 	this.source = source;
 
+	var self = this;
+
 	if (this.refresh)
 		this.get()
 			.catch(function( e ){
-				debug('%s: failed to resolve initial value %o', this.name, e);
+				debug('%s: failed to resolve initial value %o', self.name, e);
 			});
 }
 
